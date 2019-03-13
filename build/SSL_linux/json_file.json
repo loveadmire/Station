@@ -1,0 +1,6 @@
+{
+  "certPath": "./cert/sm2/",
+  "appKey": "D53274AB4D1548278394CD14865704ED",
+  "serverIP": "172.16.10.152",
+  "serverPort": 8881
+}
