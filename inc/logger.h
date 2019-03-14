@@ -113,7 +113,7 @@ printf(msg);\
        FILE *fp;\
        char msg[128] = {0};\
        fp = fopen(LOG_FILE,"a+");\
-       sprintf(msg," %s : %s {%s:%d}  "format,LOG_TAG,TypeToString_self(type),__FILE__,__LINE__,##__VA_ARGS__);\
+       sprintf(msg," %s : %s {%s:%d}  " format,LOG_TAG,TypeToString_self(type),__FILE__,__LINE__,##__VA_ARGS__);\
        fwrite(msg,1,strlen(msg),fp);\
        fclose(fp);\
        }while(0);\
