@@ -20,13 +20,13 @@
 #**************************************************************************/
 
 # 目标程序名称
-TARGET := gmssl_server
+TARGET := Station
 
 # 需要链接的库路径，以空格隔开
 LIB_PATHS := ../lib/
 
 # 需要连接的库名，以空格隔开LIBS := 
-LIBS := ssl crypto m  rt  pthread dl event
+LIBS := ssl crypto m  rt  pthread dl event curl
 # 包含头文件所在目录INCLUDES := 
 
 # 头文件所在目录INCLUDE_PATH := ../include/
@@ -38,13 +38,13 @@ SRC_PATH := ../src/
 $(warning, $(SRC_PATH) )
 $(warning, $(INCLUDE_PATH) )
 # 中间文件目录
-OBJ_PATH := ../obj/
+OBJ_PATH := ../obj
 
 # 输出文件目录
-OUT_DIR := ../bin/
+OUT_DIR := ../bin
 
 CC := gcc
-CFLAGS := -g -static -fPIC -Wall -O2 -MMD -DLINUX_PRG
+CFLAGS := -g -static -m64 -fPIC -Wall -O2 -MMD -DLINUX_PRG
 LDFLAGS := 
 CXXFLAGS = $(CFLAGS)
 
