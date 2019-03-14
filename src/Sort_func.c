@@ -134,7 +134,7 @@ void quick_sort_str(char *str,int start,int end){
         quick_sort_str(str,pos+1,end);
     }
 }
-
+//未实现
 int BucketSort(char *str,int size){
     if (!str){
         return -1;
@@ -152,7 +152,7 @@ int BucketSort(char *str,int size){
     return -1; //未实现
 }
 
-
+#if 0
 void StrSort(char** Strs, size_t num)
 {//注意：Strs[0]必须是最小值，Strs[num-1]必须是最大值；num>0
     size_t lo=0, mid_lo, mid_hi, hi=num-1; //当前子表的 低/中低/中高/高 指针
@@ -227,7 +227,7 @@ void StrSort(char** Strs, size_t num)
     else return;
 }
 
-
+#endif
 
 
 

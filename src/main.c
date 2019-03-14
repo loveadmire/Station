@@ -8,7 +8,6 @@
 #include "threadpool.h"
 
 #include <event2/event.h>
-#include "stack.h"
 #include "searchtree.h"
 #include "c_hash.h"
 #include "epoll_func.h"
@@ -21,6 +20,7 @@
 
 #include "String.h"
 #include "linklist.h"
+#include "../inc/stack.h"
 
 #define debug 1
 
@@ -238,6 +238,10 @@ int main(int argc,char *argv[]) {
             Insert_sort_string(str);
             printf("Insert_sort_string %s \n",str);
             Signal_list_test();
+            STACK * stack = createStack(8);
+            if (stack){
+                printf("ok\n");
+            }
         }
         if(strcmp(argv[1],"deabin") == 0) {
             int a = 2;

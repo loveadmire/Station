@@ -1,13 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "stack.h"
+#include "../inc/stack.h"
 
-int isEmpty_stack(STACK *s)
+int Stack_isEmpty(STACK *s)
 {
 	return (s->stackTop == EmptyTOS);
 }
 
-int isFull_stack(STACK *s)
+int Stack_isFull(STACK *s)
 {
 	return (s->stackTop == s->capacity -1);
 }
@@ -20,10 +20,10 @@ STACK *createStack(int maxElements)
 		printf("Stack size si too small\n");	
 		return NULL;
 	}
-	s = (STACK *)malloc(sizeof(STACK));
+	s = (STACK *)malloc(sizeof( STACK));
 	s->array = (elementType *)malloc(sizeof(elementType) * maxElements);
 	s->capacity = maxElements;
-	makeEmpty_stack(s);
+	Stack_makeEmpty(s);
 
 	return s;
 
@@ -36,7 +36,7 @@ void disposeStack(STACK *s)
 	}
 }
 
-void makeEmpty_stack(STACK *s)
+void Stack_makeEmpty(STACK *s)
 {
 	if(s != NULL) {
 		s->stackTop = EmptyTOS;	
@@ -45,7 +45,7 @@ void makeEmpty_stack(STACK *s)
 
 void push(elementType element, STACK *s)
 {
-	if(!isFull_stack(s)) {
+	if(!Stack_isFull(s)) {
 		s->stackTop++;
 		s->array[s->stackTop] = element;
 	} else {
@@ -55,7 +55,7 @@ void push(elementType element, STACK *s)
 
 elementType top(STACK *s)
 {
-	if(!isEmpty_stack(s)) {
+	if(!Stack_isEmpty(s)) {
 		return s->array[s->stackTop];	
 	} else {
 		printf("empty stack\n");
@@ -65,7 +65,7 @@ elementType top(STACK *s)
 
 void pop(STACK *s)
 {
-	if(!isEmpty_stack(s))
+	if(!Stack_isEmpty(s))
 		s->stackTop--;	
 	else
 		printf("empty stack\n");
@@ -73,7 +73,7 @@ void pop(STACK *s)
 
 elementType topAndTop(STACK *s)
 {
-	if(!isEmpty_stack(s)) {
+	if(!Stack_isEmpty(s)) {
 		return s->array[s->stackTop--];
 	} else {
 		printf("empty stack\n");	

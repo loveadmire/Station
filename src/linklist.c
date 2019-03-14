@@ -430,6 +430,5 @@ int Signal_list_test()
 	show_linklist(phead);
 	printf("\n");
 	destory_linklist(phead);
-	printf("test version");
 	return 0;
 }
