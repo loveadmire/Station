@@ -5,7 +5,7 @@
 
 //choice mode for syslog
 //#define SYSLOG_USE
-
+void test_PRINTF(void);
 #ifdef SYSLOG_USE
 #include <sys/syscall.h>
 #include <syslog.h>
@@ -121,7 +121,23 @@ printf(msg);\
 
 #endif
 
-
+#define PRINTF_MESSAGE(len,str,flag,message)\
+{\
+    printf(" Information %s %s %s %d  \n",message,__FUNCTION__,__FILE__,__LINE__);\
+    if(flag == 1 && strlen(str) != 0){\
+        int i = 0;\
+        for(i =0 ;i < len;i++){\
+            printf("%02X%c", str[i], ((i + 1) % 16) ? ' ' : '\n');\
+        }\
+        printf("\n");\
+    }\
+ }
+#define PRINTF_FORMAT(format,...)\
+{\
+    char meg[128] = {0};\
+    sprintf(meg,"%s %s %d  \n" format,__FUNCTION__,__FILE__,__LINE__,##__VA_ARGS__);\
+    printf(" \n %s \n",meg);\
+}
 
 
 #endif // LOGGER_H

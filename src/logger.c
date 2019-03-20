@@ -60,3 +60,11 @@ void test_mylog()
     PRINT_SYSLOG(LOG_EMERG,"%s 1 %d \n",str,i);
 #endif
 }
+void test_PRINTF(void){
+    char *str = "helloworld";
+    PRINTF_MESSAGE(strlen(str),str,1,"Test01");
+    char stt[] = "helloworld";
+    PRINTF_MESSAGE(strlen(stt),stt,1,"Test02");
+    PRINTF_FORMAT("%s %s %d %d ",str,stt,strlen(str),strlen(stt));
+    PRINTF_FORMAT("%s %s %d %d ",str,stt,sizeof(str),sizeof(stt));
+}

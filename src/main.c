@@ -21,6 +21,7 @@
 #include "String.h"
 #include "linklist.h"
 #include "../inc/stack.h"
+#include "logger.h"
 
 #define debug 1
 
@@ -237,11 +238,12 @@ int main(int argc,char *argv[]) {
             printf("exc %s \n",str);
             Insert_sort_string(str);
             printf("Insert_sort_string %s \n",str);
-            Signal_list_test();
+           // Signal_list_test();
             STACK * stack = createStack(8);
             if (stack){
                 printf("ok\n");
             }
+            test_PRINTF();
         }
         if(strcmp(argv[1],"deabin") == 0) {
             int a = 2;
