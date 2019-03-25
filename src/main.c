@@ -22,6 +22,8 @@
 #include "linklist.h"
 #include "../inc/stack.h"
 #include "logger.h"
+#include "C_fun_pointer.h"
+#include "../inc/algorithm/judge_num.h"
 
 #define debug 1
 
@@ -244,6 +246,26 @@ int main(int argc,char *argv[]) {
                 printf("ok\n");
             }
             test_PRINTF();
+            int boolis(int x){
+                //return 0,偶数，return 1 奇数
+                return (x&1) != 0;
+            }
+            // != 优先级大于 & 然而对于（3&1） ！= 0 和不加括号，结果一样，直接return num&1;
+            printf(" is or not an Prime number  %d \n",Judge_num_isPrime(21));
+
+
+            Pmath_fun pointer_test;
+            pointer_test = (Pmath_fun)malloc(sizeof(math_fun));
+            pointer_test->id = 1000;
+            memset(pointer_test->name,"a",50);
+            pointer_test->initial = initial;
+            pointer_test->process_in = process_in;
+            pointer_test->destroy = destroy;
+            PRINTF_MESSAGE(32,pointer_test->name,1,"name is ");
+            pointer_test->initial();
+            pointer_test->process_in(pointer_test->id, pointer_test->name);
+            pointer_test->destroy();
+            free(pointer_test);
         }
         if(strcmp(argv[1],"deabin") == 0) {
             int a = 2;
