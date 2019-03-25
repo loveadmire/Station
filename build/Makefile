@@ -41,7 +41,7 @@ $(warning, $(INCLUDE_PATH) )
 OBJ_PATH := ../obj
 
 # 输出文件目录
-OUT_DIR := ../bin
+OUT_DIR := ../bin/
 
 CC := gcc
 CFLAGS := -g -static -m64 -fPIC -Wall -O2 -MMD -DLINUX_PRG
