@@ -2,6 +2,8 @@
 // Created by root on 19-3-23.
 //
 #include "../../inc/algorithm/judge_num.h"
+#include <stdio.h>
+#include <math.h>
 
 int Judge_num_isOdd(int num){
     if (num > 0)
@@ -18,7 +20,7 @@ int Judge_num_isPrime(int num){
     if (num %6 != 1 && num %6 != 5){
         return 0;
     }
-    float ss = (float)sqrtf128(num);
+    float ss = (float)sqrt(num);
     printf(" ss is %02f ",ss);
     int temp = (int)sqrtf(num);
     int i = 0;
