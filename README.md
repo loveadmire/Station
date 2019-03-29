@@ -1,4 +1,7 @@
-# DATA_STRUCT
+
+#linux 有关网络编程，数据结构，国密算法，509证书分析等初级演示代码
+#所有代码调用可以在main.c中找到调试入口；
+数据结构部分，为转载，自己实现了一小部分基于数据交换的接口
 data struct by C
 
 ## linklist finshed
